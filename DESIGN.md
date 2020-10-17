@@ -1,6 +1,6 @@
 # Design
 
-`log-monster` should by very fast at consuming log-data.  Our design should try to minimize misuse while providing as much flexibility as possible.  To that end, `log-monster` should consist of a front-end REST API and a back-end logging strategy.  The back-end can be implemented as a library that implements the functionality of the REST API in a certain way.  We can then add support for swapping out back-ends as needed.
+`log-monster` should by very fast at consuming log data.  Our design should try to minimize misuse while providing as much flexibility as possible.  To that end, `log-monster` should consist of a front-end REST API and a back-end logging strategy.  The back-end can be implemented as a library that implements the functionality of the REST API in a certain way.  We can then add support for swapping out back-ends as needed.
 
 ## Logging levels
 
@@ -12,7 +12,7 @@
 
 ## Endpoints
 
-Each logging level should have its own endpoint so that misuse is obvious (a 404) response. Each endpoint should be identical in all other respects.
+Each logging level should have its own endpoint so that misuse is obvious (a 404 response). Each endpoint should be identical in all other respects.
 
 Each endpoint should accept data in the following format:
 
