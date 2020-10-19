@@ -9,6 +9,7 @@
 - `info` for information that is good to keep track of
 - `warn` for warnings about potentially dangerous situations
 - `error` for errors that have occurred
+- `fatal` for fatal erros that have occurred
 
 ## Endpoints
 
