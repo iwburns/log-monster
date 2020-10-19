@@ -44,6 +44,7 @@ Content-Type: application/json
   "text": "The text you wish to be logged.",
 }
 ```
+
 ## Internals
 
 The `log-monster` package should be made up of three things:
@@ -107,3 +108,7 @@ export abstract class LoggingStrategy {
 ### `log-monster-backend-*`
 
 Each `log-monster-backend-*` package should export a class extending the `LoggingStrategy` class above.  Each backend is free to implement its strategy however it sees fit, optimizing for different use-cases along the way.
+
+## Authentication
+
+_tbd_
