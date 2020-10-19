@@ -9,7 +9,6 @@
 - `info` for information that is good to keep track of
 - `warn` for warnings about potentially dangerous situations
 - `error` for errors that have occurred
-- `fatal` for fatal erros that have occurred
 
 ## Endpoints
 
@@ -22,6 +21,11 @@ Each endpoint should accept data in the following format:
   "group": "A string used to group logs together.",
   "occurred": "2020-01-01T01:00+00:00",
   "text": "The text you wish to be logged.",
+  "trace": [{
+    'file': '',
+    'line': 1
+    'method': '',
+  }]
 }
 ```
 
@@ -29,7 +33,9 @@ The `group` is just a of key to use when grouping different logs together.  Back
 
 The `occurred` is when the log occurred on the machine that is making the current request.  This is different from when that request was received by `log-monster`.  This should be in the format shown above.
 
-The `text` is just the text that will be logged using the current back-end.  
+The `text` is just the text that will be logged using the current back-end.
+
+The `trace` is an array of objects that show where something came from.
 
 Example request:
 ```
