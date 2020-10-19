@@ -22,9 +22,9 @@ Each endpoint should accept data in the following format:
   "occurred": "2020-01-01T01:00+00:00",
   "text": "The text you wish to be logged.",
   "trace": [{
-    'file': '',
-    'line': 1
-    'method': '',
+    "file": "",
+    "line": 1
+    "method": "",
   }]
 }
 ```
