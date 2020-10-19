@@ -22,9 +22,9 @@ Each endpoint should accept data in the following format:
   "occurred": "2020-01-01T01:00+00:00",
   "text": "The text you wish to be logged.",
   "trace": [{
-    "file": "",
+    "file": "File path and name",
     "line": 1,
-    "method": "",
+    "method": "Method called",
   }]
 }
 ```
@@ -48,6 +48,11 @@ Content-Type: application/json
   "group": "A string used to group logs together.",
   "occurred": "2020-01-01T01:00+00:00",
   "text": "The text you wish to be logged.",
+  "trace": [{
+    "file": "File path and name",
+    "line": 1,
+    "method": "Method called",
+  }]
 }
 ```
 ## Internals
@@ -91,14 +96,22 @@ export interface Entry {
   group: String,
   occurred: Date,
   text: String,
+  trace: Array<{ file: String, line: number, method: String }>,
 }
 
-export function createEntry(level: Level, group: String, occurred: Date, text: String) => Entry {
+export function createEntry(
+  level: Level,
+  group: String,
+  occurred: Date,
+  text: String,
+  trace: Array<{ file: String, line: number, method: String }>,
+) => Entry {
   return {
     level,
     group,
     occurred,
     text,
+    trace,
   };
 }
 
