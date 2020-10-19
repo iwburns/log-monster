@@ -23,7 +23,7 @@ Each endpoint should accept data in the following format:
   "text": "The text you wish to be logged.",
   "trace": [{
     "file": "",
-    "line": 1
+    "line": 1,
     "method": "",
   }]
 }
