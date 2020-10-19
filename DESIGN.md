@@ -63,6 +63,7 @@ The `log-monster` package should be made up of three things:
 | `POST` | `/info`         | insert a info-level log        |
 | `POST` | `/warn`         | insert a warn-level log        |
 | `POST` | `/error`        | insert a error-level log       |
+| `POST` | `/fatal`        | insert a fatal-level log       |
 | `POST` | `/search/logs/` | select logs by group and level |
 
 ### `log-monster-types`
@@ -78,6 +79,7 @@ export enum Level {
   Info,
   Warn,
   Error,
+  Fatal,
 }
 
 export interface Entry {
