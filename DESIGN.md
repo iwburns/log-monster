@@ -49,7 +49,7 @@ Content-Type: application/json
 The `log-monster` package should be made up of three things:
 
 - `log-monster` itself, which should be a light-weight wrapper around a logging mechanism
-- `log-monster-types` which should be a Typescript package specifying the API of all backend logging packages
+- [`log-monster-types`](https://github.com/iwburns/log-monster-types) which should be a Typescript package specifying the API of all backend logging packages
 - `log-monster-backend-*` which should be a library implementing the `log-monster-types` API.  There could be many of these, each with their own logging strategy.
 
 ### `log-monster`
@@ -68,43 +68,7 @@ The `log-monster` package should be made up of three things:
 
 ### `log-monster-types`
 
-`log-monster-types` should be small and focused as well.  Here we should define the types of functions and objects that each backend should know how to deal with.
-
-Rough sketch:
-
-```typescript
-export enum Level {
-  Trace,
-  Debug,
-  Info,
-  Warn,
-  Error,
-  Fatal,
-}
-
-export interface Entry {
-  level: Level,
-  group: String,
-  occurred: Date,
-  text: String,
-}
-
-export function createEntry(level: Level, group: String, occurred: Date, text: String) => Entry {
-  return {
-    level,
-    group,
-    occurred,
-    text,
-  };
-}
-
-export abstract class LoggingStrategy {
-  constructor() {}
-  
-  abstract log(entry: Entry): boolean; // not sure if I like the boolean, or if this should return a Result<T, E> -ish thing
-  abstract find_logs(level: Level, group: String): Array<Entry>
-}
-```
+`log-monster-types` can be found [here](https://github.com/iwburns/log-monster-types). This library should be small and focused as well.  Here we should define the types of functions and objects that each backend should know how to deal with.
 
 ### `log-monster-backend-*`
 
