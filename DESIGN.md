@@ -73,3 +73,5 @@ The `log-monster` package should be made up of three things:
 ### `log-monster-backend-*`
 
 Each `log-monster-backend-*` package should export a class extending the `LoggingStrategy` class above.  Each backend is free to implement its strategy however it sees fit, optimizing for different use-cases along the way.
+
+A basic example of this can be found [here](https://github.com/iwburns/log-monster-backend-console-logger).
