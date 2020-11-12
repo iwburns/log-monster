@@ -79,7 +79,6 @@ The `log-monster` package should be made up of three things:
 
 ### `log-monster-types`
 
-
 `log-monster-types` can be found [here](https://github.com/iwburns/log-monster-types). This library should be small and focused as well.  Here we should define the types of functions and objects that each backend should know how to deal with.
 
 ### `log-monster-backend-*`
